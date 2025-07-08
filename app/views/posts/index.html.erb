@@ -5,6 +5,11 @@
         <li>
             <%= post.title %>
             <%= post.body %>
+            <% if user_signed_in? %>
+                <em>by <%= post.user.email %></em>
+            <% end %>
         </li>
     <% end %>
 </ul>
+
+<%= link_to "Create new post", new_post_path %>
